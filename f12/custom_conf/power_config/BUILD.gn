@@ -19,3 +19,10 @@ ohos_prebuilt_etc("power_mode_config_vendor") {
   install_images = [ chipset_base_dir ]
   part_name = "product_f12"
 }
+
+ohos_prebuilt_etc("battery_config") {
+  source = "battery_config.json"
+  relative_install_dir = "battery"
+  install_images = [ chipset_base_dir ]
+  part_name = "product_f12"
+}

@@ -84,7 +84,7 @@ git clone -b OpenHarmony-4.0-Release https://gitee.com/openharmony-dg/kernel_lin
 #下载香橙派5Plus内核
 git clone https://gitee.com/ohos-porting-communities/linux_5.10_opi.git kernel/linux/linux-5.10-opi
 
-#下载香橙派5Plus内核
+#下载FILY F12内核
 git clone https://gitee.com/ohos-porting-communities/kernel_linux_5.10_f12.git kernel/linux/linux-5.10-f12
 
 #因官方manifest在4.0分支去掉了eudev仓，poco f1电量检测依赖eudev，因此需要手动下载eudev

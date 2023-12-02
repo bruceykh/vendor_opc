@@ -1,0 +1,47 @@
+{
+  "name": "@ohos/product_sagit",
+  "version": "3.1",
+  "license": "Apache License 2.0",
+  "private": false,
+  "scripts": {},
+  "dirs": [""],
+  "component": {
+    "name": "product_sagit",
+    "subsystem": "product_sagit",
+    "syscap": [],
+    "features": [],
+    "deps": {
+      "components": [
+        "ability_base",
+        "ability_runtime",
+        "access_token",
+        "hdf_core",
+        "ipc",
+        "safwk",
+        "samgr",
+        "drivers_interface_battery",
+        "common_event_service",
+        "eventhandler",
+        "c_utils",
+        "hilog"
+      ],
+      "third_party": [
+        "eudev"
+      ]
+    },
+    "build": {
+      "sub_component": [
+        "//vendor/opc/sagit/default_app_config:default_app_config",
+        "//vendor/opc/sagit/image_conf:custom_image_conf",
+        "//vendor/opc/sagit/preinstall-config:preinstall-config",
+        "//vendor/opc/sagit/resourceschedule:resourceschedule",
+        "//vendor/opc/sagit/etc:product_etc_conf",
+        "//vendor/opc/sagit/hals/audio:hdf_audio_config",
+        "//vendor/opc/sagit/hdf_config/uhdf:hdf_config",
+        "//vendor/opc/sagit/custom_conf:custom_config",
+        "//vendor/opc/sagit/ext_service:ext_service_group",
+        "//vendor/opc/common:common_app_group"
+      ]
+    }
+  }
+}

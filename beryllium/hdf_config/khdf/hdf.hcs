@@ -1,0 +1,4 @@
+
+root {
+    module = "qualcomm,sdm845_chip";
+}

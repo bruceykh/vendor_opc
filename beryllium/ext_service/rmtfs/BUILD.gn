@@ -1,0 +1,63 @@
+# Copyright (C) 2021-2022 HiHope Open Source Organization .
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("//build/ohos.gni") 
+
+ohos_executable("rmtfs") {
+  sources = [
+    "qmi_rmtfs.c",
+    "rmtfs.c",
+    "rproc.c",
+    "sharedmem.c",
+    "storage.c",
+    "util.c",
+  ]
+
+  cflags = [
+      "-Wno-pointer-arith",
+      "-Wno-error"
+  ]
+
+  include_dirs = [
+    "../qrtr/lib"
+   ]
+
+  deps = [
+    "../qrtr:libqrtr",
+    "//third_party/eudev:libudev",
+  ]
+
+  external_deps = [
+    "c_utils:utils",
+    "hilog:libhilog",
+  ]
+
+  part_name = "product_beryllium"
+  install_images = [ chipset_base_dir ]
+  install_enable = true
+}
+
+ohos_prebuilt_etc("rmtfs.cfg") {
+  install_enable = true
+  source = "rmtfs.cfg"
+  module_install_dir = "etc/init"
+  install_images = [ chipset_base_dir ]
+  part_name = "product_beryllium"
+}
+
+group("rmtfs_targets") {
+  deps = [
+    ":rmtfs",
+    ":rmtfs.cfg",
+  ]
+}

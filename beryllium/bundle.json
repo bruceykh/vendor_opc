@@ -1,0 +1,47 @@
+{
+  "name": "@ohos/product_beryllium",
+  "version": "3.1",
+  "license": "Apache License 2.0",
+  "private": false,
+  "scripts": {},
+  "dirs": [""],
+  "component": {
+    "name": "product_beryllium",
+    "subsystem": "product_beryllium",
+    "syscap": [],
+    "features": [],
+    "deps": {
+      "components": [
+        "ability_base",
+        "ability_runtime",
+        "access_token",
+        "hdf_core",
+        "ipc",
+        "safwk",
+        "samgr",
+        "drivers_interface_battery",
+        "common_event_service",
+        "eventhandler",
+        "c_utils",
+        "hilog"
+      ],
+      "third_party": [
+        "eudev"
+      ]
+    },
+    "build": {
+      "sub_component": [
+        "//vendor/opc/beryllium/default_app_config:default_app_config",
+        "//vendor/opc/beryllium/image_conf:custom_image_conf",
+        "//vendor/opc/beryllium/preinstall-config:preinstall-config",
+        "//vendor/opc/beryllium/resourceschedule:resourceschedule",
+        "//vendor/opc/beryllium/etc:product_etc_conf",
+        "//vendor/opc/beryllium/hals/audio:hdf_audio_config",
+        "//vendor/opc/beryllium/hdf_config/uhdf:hdf_config",
+        "//vendor/opc/beryllium/custom_conf:custom_config",
+        "//vendor/opc/beryllium/ext_service:ext_service_group",
+        "//vendor/opc/common:common_app_group"
+      ]
+    }
+  }
+}

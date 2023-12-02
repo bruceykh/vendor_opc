@@ -1,0 +1,38 @@
+import("//build/ohos.gni")
+
+ohos_shared_library("libqpower") {
+  include_dirs = [ "include" ]
+
+  sources = [
+    "src/qpower_service_ability.cpp",
+  ]
+
+  configs = [
+    "//commonlibrary/c_utils/base:utils_config",
+  ]
+
+  defines = []
+  cflags = []
+
+  deps = [
+    # "//foundation/arkui/ace_engine/interfaces/inner_api/ui_service_manager:ui_service_mgr",
+  ]
+
+  external_deps = [
+    "ability_base:want",
+    "ability_base:zuri",
+    "ability_runtime:wantagent_innerkits",
+    "access_token:libaccesstoken_sdk",
+    "c_utils:utils",
+    "hilog:libhilog",
+    "hdf_core:libhdi",
+    "ipc:ipc_core",
+    "safwk:system_ability_fwk",
+    "samgr:samgr_proxy",
+    "drivers_interface_battery:libbattery_proxy_1.2", 
+  ]
+
+  part_name = "product_beryllium"
+  install_enable = true
+  # install_images = [ chipset_base_dir ]
+}

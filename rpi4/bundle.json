@@ -1,0 +1,28 @@
+{
+  "name": "@ohos/product_rpi4",
+  "version": "3.1",
+  "license": "Apache License 2.0",
+  "private": false,
+  "scripts": {},
+  "dirs": [""],
+  "component": {
+    "name": "product_rpi4",
+    "subsystem": "product_rpi4",
+    "syscap": [],
+    "features": [],
+    "deps": {
+      "components": [],
+      "third_party": []
+    },
+    "build": {
+      "sub_component": [
+        "//vendor/opc/rpi4/preinstall-config:preinstall-config",
+        "//vendor/opc/rpi4/resourceschedule:resourceschedule",
+        "//vendor/opc/rpi4/etc:product_etc_conf",
+        "//vendor/opc/rpi4/hdf_config/uhdf:hdf_config",
+        "//vendor/opc/rpi4/custom_conf:custom_config",
+        "//vendor/opc/common:common_app_group"
+      ]
+    }
+  }
+}

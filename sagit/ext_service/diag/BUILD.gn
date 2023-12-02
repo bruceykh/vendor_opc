@@ -1,0 +1,79 @@
+# Copyright (C) 2021-2022 HiHope Open Source Organization .
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("//build/ohos.gni") 
+
+ohos_executable("diag-router") {
+
+  sources = [
+    "router/app_cmds.c",
+    "router/circ_buf.c",
+    "router/common_cmds.c",
+    "router/diag.c",
+    "router/diag_cntl.c",
+    "router/dm.c",
+    "router/hdlc.c",
+    "router/masks.c",
+    "router/mbuf.c",
+    "router/peripheral.c",
+    "router/router.c",
+    "router/socket.c",
+    "router/uart.c",
+    "router/unix.c",
+    "router/usb.c",
+    "router/util.c",
+    "router/watch.c",
+    "router/peripheral-rpmsg.c",
+    "router/peripheral-qrtr.c",
+  ]
+
+  cflags = [
+      "-Wno-pointer-arith",
+      "-Wno-error",
+      "-DHAS_LIBUDEV=1",
+      "-DHAS_LIBQRTR=1",
+  ]
+
+  include_dirs = [
+    "../qrtr/lib",
+   ]
+
+  deps = [
+    "../qrtr:libqrtr",
+    "//third_party/eudev:libudev",
+  ]
+
+  external_deps = [
+    "c_utils:utils",
+    "hilog:libhilog",
+  ]
+
+  part_name = "product_sagit"
+  install_images = [ chipset_base_dir ]
+  install_enable = true
+}
+
+ohos_prebuilt_etc("diag-router.cfg") {
+  install_enable = true
+  source = "diag-router.cfg"
+  module_install_dir = "etc/init"
+  install_images = [ chipset_base_dir ]
+  part_name = "product_sagit"
+}
+
+group("diag-router_targets") {
+  deps = [
+    ":diag-router",
+    ":diag-router.cfg",
+  ]
+}

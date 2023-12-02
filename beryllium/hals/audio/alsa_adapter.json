@@ -1,0 +1,27 @@
+{
+    "adapters": [
+        {
+            "name": "primary",
+            "cardId": "F1",
+            "daiId": "",
+            "simple_mixer_ctl_volume": {
+                "playback": [
+                    {
+                        "name": "TAS2559 DAC"
+                    },
+                    {
+                        "name": "TAS2560 DAC"
+                    }
+                ],
+                "capture": [
+                    {
+                        "name": "DACL"
+                    },
+                    {
+                        "name": "DACR"
+                    }
+                ]
+            }
+        }
+    ]
+}

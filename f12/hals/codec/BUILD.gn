@@ -26,7 +26,7 @@ ohos_prebuilt_etc("codec_adapter_capabilities.hcb") {
   source = hcs_outputs[0]
   relative_install_dir = "hdfconfig"
   install_images = [ chipset_base_dir ]
-  subsystem_name = "raspberrypi_products"
+  subsystem_name = "product_f12"
   part_name = "product_f12"
 }
 

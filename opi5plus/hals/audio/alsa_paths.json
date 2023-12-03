@@ -5,19 +5,19 @@
                 {
                     "headphones": [
                         {
-                            "name": "Playback Path",
-                            "value": 2
+                            "name": "Headphone Switch",
+                            "value": 1
                         }
                     ],
                     "Speaker": [
                         {
-                            "name": "Playback Path",
-                            "value": 3
+                            "name": "Speaker Switch",
+                            "value": 1
                         }
                     ],
                     "mic": [
                         {
-                            "name": "Capture MIC Path",
+                            "name": "Main Mic Switch",
                             "value": 1
                         }
                     ]

@@ -11,10 +11,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-enable_audio_alsa_mode = false
+enable_audio_alsa_mode = true
 drivers_peripheral_audio_feature_hdf_proxy_stub = true
-drivers_peripheral_audio_feature_hal_notsupport_pathselect = false
+drivers_peripheral_audio_feature_hal_notsupport_pathselect = true
 enable_audio_analog_headset = true
 drivers_peripheral_audio_feature_policy_config = true
-drivers_peripheral_audio_feature_alsa_lib = false
+drivers_peripheral_audio_feature_alsa_lib = true
 drivers_peripheral_audio_feature_effect = true

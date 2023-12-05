@@ -15,7 +15,7 @@
  -->
 <Configs>
     <!--decor enable is true means app main window show decoration-->
-    <decor enable="false">
+    <decor enable="true">
         <!--supportedMode could be configed as fullscreen, floating, split or the combination of them-->
         <supportedMode>floating fullscreen</supportedMode>
     </decor>

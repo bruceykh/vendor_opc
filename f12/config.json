@@ -39,14 +39,10 @@
       ]
     },
     {
-      "subsystem": "device_f12",
+      "subsystem": "opc_soc_products",
       "components": [
         {
-          "component": "device_f12",
-          "features": []
-        },
-        {
-          "component": "rockchip_products",
+          "component": "rockchip_rk3588",
           "features": []
         }
       ]

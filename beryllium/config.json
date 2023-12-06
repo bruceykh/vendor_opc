@@ -43,14 +43,10 @@
       ]
     },
     {
-      "subsystem": "device_beryllium",
+      "subsystem": "opc_soc_products",
       "components": [
         {
-          "component": "device_beryllium",
-          "features": []
-        },
-        {
-          "component": "qualcomm_products",
+          "component": "qualcomm_sdm845",
           "features": []
         }
       ]

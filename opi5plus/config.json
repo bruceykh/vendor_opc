@@ -39,14 +39,10 @@
       ]
     },
     {
-      "subsystem": "device_opi5plus",
+      "subsystem": "opc_soc_products",
       "components": [
         {
-          "component": "device_opi5plus",
-          "features": []
-        },
-        {
-          "component": "rockchip_products",
+          "component": "rockchip_rk3588",
           "features": []
         }
       ]

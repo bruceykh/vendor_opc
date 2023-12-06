@@ -39,14 +39,10 @@
       ]
     },
     {
-      "subsystem": "device_rpi4",
+      "subsystem": "opc_soc_products",
       "components": [
         {
-          "component": "device_rpi4",
-          "features": []
-        },
-        {
-          "component": "broadcom_products",
+          "component": "broadcom_bcm2711",
           "features": []
         }
       ]

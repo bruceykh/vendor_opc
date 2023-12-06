@@ -43,14 +43,10 @@
       ]
     },
     {
-      "subsystem": "device_sagit",
+      "subsystem": "opc_soc_products",
       "components": [
         {
-          "component": "device_sagit",
-          "features": []
-        },
-        {
-          "component": "qualcomm_products",
+          "component": "qualcomm_msm8998",
           "features": []
         }
       ]

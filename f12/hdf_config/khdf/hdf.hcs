@@ -1,4 +1,4 @@
 
 root {
-    module = "amlogic,a311d_chip";
+    module = "rockchip,rk3588s_chip";
 }

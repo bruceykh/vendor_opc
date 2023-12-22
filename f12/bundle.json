@@ -16,11 +16,12 @@
     },
     "build": {
       "sub_component": [
+        "//vendor/opc/f12/default_app_config:default_app_config",
         "//vendor/opc/f12/preinstall-config:preinstall-config",
         "//vendor/opc/f12/resourceschedule:resourceschedule",
         "//vendor/opc/f12/etc:product_etc_conf",
         "//vendor/opc/f12/hals/audio:hdf_audio_config",
-        "//vendor/opc/f12/hals/codec/:hdf_codec_config",
+        "//vendor/opc/f12/hals/codec:hdf_codec_config",
         "//vendor/opc/f12/hdf_config/uhdf:hdf_config",
         "//vendor/opc/f12/custom_conf:custom_config",
         "//vendor/opc/common:common_app_group"

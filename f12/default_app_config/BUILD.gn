@@ -19,6 +19,85 @@ ohos_prebuilt_etc("default_app_detail_config") {
   part_name = "product_f12"
 }
 
+ohos_prebuilt_etc("launcher_pad") {
+  source = "//vendor/opc/common/hap/Launcher.hap"
+  module_install_dir = "app/com.ohos.launcher"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("launcher_settings_pad") {
+  source = "//vendor/opc/common/hap/Launcher_Settings.hap"
+  module_install_dir = "app/com.ohos.launcher"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI_pad") {
+  source = "//vendor/opc/common/hap/SystemUI.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI-ControlPanel_pad") {
+  source = "//vendor/opc/common/hap/SystemUI-ControlPanel.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI-NavigationBar_pad") {
+  source = "//vendor/opc/common/hap/SystemUI-NavigationBar.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI-NotificationManagement_pad") {
+  source = "//vendor/opc/common/hap/SystemUI-NotificationManagement.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI-NotificationPanel_pad") {
+  source = "//vendor/opc/common/hap/SystemUI-NotificationPanel.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI-StatusBar_pad") {
+  source = "//vendor/opc/common/hap/SystemUI-StatusBar.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI-VolumePanel_pad") {
+  source = "//vendor/opc/common/hap/SystemUI-VolumePanel.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI-SystemDialog_pad") {
+  source = "//vendor/opc/common/hap/SystemUI-SystemDialog.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
+ohos_prebuilt_etc("SystemUI-ScreenLock_pad") {
+  source = "//vendor/opc/common/hap/SystemUI-ScreenLock.hap"
+  module_install_dir = "app/com.ohos.systemui"
+  part_name = "product_f12"
+}
+
 group("default_app_config") {
-  deps = [ ":default_app_detail_config" ]
+  deps = [
+    ":default_app_detail_config",
+    # ":launcher_pad",
+    # ":launcher_settings_pad",
+    # ":SystemUI_pad",
+    # ":SystemUI-ControlPanel_pad",
+    # ":SystemUI-NavigationBar_pad",
+    # ":SystemUI-NotificationManagement_pad",
+    # ":SystemUI-NotificationPanel_pad",
+    # ":SystemUI-StatusBar_pad",
+    # ":SystemUI-VolumePanel_pad",
+    # ":SystemUI-SystemDialog_pad",
+    # ":SystemUI-ScreenLock_pad",
+  ]
 }

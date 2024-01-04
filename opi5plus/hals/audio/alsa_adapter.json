@@ -2,41 +2,13 @@
     "adapters": [
         {
             "name": "primary",
-            "cardId": "rockchipes8388",
-            "daiId": "",
-            "simple_mixer_ctl_volume": {
-                "playback": [
-                    {
-                        "name": "Output 1"
-                    },
-                    {
-                        "name": "Output 2"
-                    }
-                ],
-                "capture": [
-                    {
-                        "name": "Capture Digital"
-                    },
-                    {
-                        "name": "Capture Digital"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "dp",
-            "cardId": "rockchipdp0",
-            "daiId": ""
+            "cardId": 0,
+            "cardName": "rockchipes8388"
         },
         {
             "name": "hdmi",
-            "cardId": "rockchiphdmi0",
-            "daiId": ""
-        },
-        {
-            "name": "hdmi1",
-            "cardId": "rockchiphdmi1",
-            "daiId": ""
+            "cardId": 1,
+            "cardName": "rockchiphdmi0"
         }
     ]
 }

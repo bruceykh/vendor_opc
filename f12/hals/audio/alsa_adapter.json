@@ -2,31 +2,13 @@
     "adapters": [
         {
             "name": "primary",
-            "cardId": "rockchipes8388c",
-            "daiId": "",
-            "simple_mixer_ctl_volume": {
-                "playback": [
-                    {
-                        "name": "Output 1"
-                    },
-                    {
-                        "name": "Output 2"
-                    }
-                ],
-                "capture": [
-                    {
-                        "name": "Capture Digital"
-                    },
-                    {
-                        "name": "Capture Digital"
-                    }
-                ]
-            }
+            "cardId": 0,
+            "cardName": "rockchipes8388c"
         },
         {
             "name": "hdmi",
-            "cardId": "rockchiphdmi",
-            "daiId": ""
+            "cardId": 1,
+            "cardName": "rockchiphdmi"
         }
     ]
 }

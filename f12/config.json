@@ -64,17 +64,6 @@
       ]
     },
     {
-      "subsystem": "wpa_supplicant-2.9",
-      "components": [
-        {
-          "component": "wpa_supplicant-2.9",
-          "features": [
-            "wpa_supplicant_driver_nl80211 = true"
-          ]
-        }
-      ]
-    },
-    {
       "subsystem": "hdf",
       "components": [
         {
@@ -91,7 +80,8 @@
         {
           "component": "drivers_peripheral_display",
           "features": [
-            "drivers_peripheral_display_community = true"
+            "drivers_peripheral_display_community = true",
+            "drivers_peripheral_display_vdi_default = true"
           ]
         },
         {
@@ -137,15 +127,35 @@
       ]
     },
     {
+      "subsystem": "thirdparty",
+      "components": [
+        {
+          "component": "libuv",
+          "features": [
+            "use_ffrt = true"
+          ]
+        },
+        {
+          "component": "wpa_supplicant",
+          "features": [
+            "wpa_supplicant_driver_nl80211 = true"
+          ]
+        }
+      ]
+    },
+    {
       "subsystem": "graphic",
       "components": [
         {
           "component": "graphic_2d",
           "features": [
             "graphic_2d_feature_rs_enable_eglimage = true",
-            "graphic_2d_feature_rs_enable_uni_render = false",
-            "graphic_2d_feature_enable_afbc = false"
+            "graphic_2d_feature_use_texgine = true"
           ]
+        },
+        {
+          "component": "graphic_surface",
+          "features": []
         }
       ]
     }

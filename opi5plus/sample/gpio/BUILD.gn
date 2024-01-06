@@ -34,7 +34,7 @@ ohos_executable("gpio_test") {
     "hilog:libhilog",
   ]
 
-  part_name = "raspberrypi_products"
+  part_name = "product_opi5plus"
   install_images = [ "system" ]
   install_enable = true
 }

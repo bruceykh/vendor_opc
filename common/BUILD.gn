@@ -13,14 +13,14 @@
 
 import("//build/ohos.gni")
 
-ohos_prebuilt_etc("f-oh_hap") {
-  source = "hap/F-OH-1.3.4.hap"
-  module_install_dir = "app/org.ohosdev.foh"
-  part_name = "product_$product_name"
-}
+# ohos_prebuilt_etc("f-oh_hap") {
+#   source = "hap/F-OH-1.3.4.hap"
+#   module_install_dir = "app/org.ohosdev.foh"
+#   part_name = "product_$product_name"
+# }
 
 group("common_app_group") {
   deps = [
-    ":f-oh_hap"
+    # ":f-oh_hap"
     ]
 }

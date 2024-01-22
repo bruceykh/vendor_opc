@@ -26,7 +26,7 @@
     <!--window mdoe change hot zones config, fullscreen primary secondary-->
     <modeChangeHotZones>50 50 50</modeChangeHotZones>
     <!--stretchable enable is true means all window be stretchable-->
-    <stretchable enable="false"></stretchable>
+    <stretchable enable="true"></stretchable>
     <!--exit split screen mode ratio config-->
     <exitSplitRatios>0.1 0.9</exitSplitRatios>
     <!--split screen ratios config-->

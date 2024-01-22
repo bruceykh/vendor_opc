@@ -30,10 +30,6 @@
           "features": []
         },
         {
-          "component": "bluetooth_service",
-          "features": []
-        },
-        {
           "component": "wifi",
           "features": [
             "wifi_feature_non_seperate_p2p = true",
@@ -68,38 +64,11 @@
       ]
     },
     {
-      "subsystem": "wpa_supplicant-2.9",
-      "components": [
-        {
-          "component": "wpa_supplicant-2.9",
-          "features": [
-            "wpa_supplicant_driver_nl80211 = true"
-          ]
-        }
-      ]
-    },
-    {
       "subsystem": "hdf",
       "components": [
         {
-          "component": "drivers_interface_ril",
-          "features": []
-        },
-        {
-          "component": "drivers_peripheral_ril",
-          "features":[]
-        },
-        {
           "component": "drivers_interface_audio",
           "features": []
-        },
-        {
-          "component": "drivers_peripheral_audio",
-          "features": [
-            "drivers_peripheral_audio_feature_full_test_suite = false",
-            "drivers_peripheral_audio_feature_alsa_lib = true",
-            "drivers_peripheral_audio_feature_effect = false"
-          ]
         },
         {
           "component": "drivers_peripheral_codec",
@@ -111,21 +80,26 @@
         {
           "component": "drivers_peripheral_display",
           "features": [
-            "drivers_peripheral_display_community = true"
+            "drivers_peripheral_display_community = true",
+            "drivers_peripheral_display_vdi_default = true"
           ]
         },
         {
-          "component": "drivers_peripheral_wlan",
+          "component": "drivers_peripheral_audio",
           "features": [
-            "drivers_peripheral_wlan_feature_enable_HDF_NL80211 = false",
-            "drivers_peripheral_wlan_feature_enable_HDF_UT = false"
+            "drivers_peripheral_audio_feature_alsa_lib = true"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "subsystem": "multimedia",
+      "components": [
         {
-          "component": "hdf_core",
+          "component": "player_framework",
           "features": [
-            "hdf_core_platform_test_support = false"
-          ]
+            "multimedia_player_framework_use_codec_plugins = false"
+         ]
         }
       ]
     },
@@ -142,15 +116,6 @@
       ]
     },
     {
-    "subsystem": "ai",
-    "components": [
-        {
-          "component": "mindspore",
-          "features": []
-        }
-      ]
-    },
-    {
       "subsystem": "msdp",
       "components": [
         {
@@ -162,13 +127,18 @@
       ]
     },
     {
-      "subsystem": "multimedia",
+      "subsystem": "thirdparty",
       "components": [
         {
-          "component": "audio_framework",
+          "component": "libuv",
           "features": [
-            "audio_framework_feature_dtmf_tone = true",
-            "audio_framework_feature_opensl_es = true"
+            "use_ffrt = true"
+          ]
+        },
+        {
+          "component": "wpa_supplicant",
+          "features": [
+            "wpa_supplicant_driver_nl80211 = true"
           ]
         }
       ]
@@ -179,10 +149,13 @@
         {
           "component": "graphic_2d",
           "features": [
-            "graphic_2d_feature_ace_enable_gpu = true",
             "graphic_2d_feature_rs_enable_eglimage = true",
-            "graphic_2d_feature_enable_mesa3d = true"
+            "graphic_2d_feature_use_texgine = true"
           ]
+        },
+        {
+          "component": "graphic_surface",
+          "features": []
         }
       ]
     }

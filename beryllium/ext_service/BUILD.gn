@@ -16,9 +16,9 @@ import("//build/ohos.gni")
 group("ext_service_group") {
   deps = [
     # "timekeep:timekeep_targets",
-    "qpower:qpower_targets",
+    # "qpower:qpower_targets",
     "qrtr:qrtr_targets",
-    "rmtfs:rmtfs_targets",
+    # "rmtfs:rmtfs_targets",
     "tqftpserv:tqftpserv_targets",
     "pd-mapper:pd-mapper_targets",
   ]

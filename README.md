@@ -71,9 +71,9 @@ bash build/prebuilts_download.sh
 ## 2.1 下载适配源码
 进到项目根目录，下载设备源码：
 ```
-git clone -b OpenHarmony-4.1-Beta1 https://gitee.com/ohos-porting-communities/vendor_opc.git vendor/opc
-git clone -b OpenHarmony-4.1-Beta1 https://gitee.com/ohos-porting-communities/device_board_opc.git device/board/opc
-git clone -b OpenHarmony-4.1-Beta1 https://gitee.com/ohos-porting-communities/device_soc_opc.git device/soc/opc
+git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/vendor_opc.git vendor/opc
+git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/device_board_opc.git device/board/opc
+git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/device_soc_opc.git device/soc/opc
 
 #下载米6内核（835内核）
 git clone https://gitee.com/ohos-porting-communities/linux_sagit.git kernel/linux/linux-sagit

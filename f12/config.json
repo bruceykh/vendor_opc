@@ -30,11 +30,8 @@
           "features": []
         },
         {
-          "component": "wifi",
-          "features": [
-            "wifi_feature_non_seperate_p2p = true",
-            "wifi_feature_non_hdf_driver = true"
-         ]
+          "component": "bluetooth_service",
+          "features": []
         }
       ]
     },
@@ -71,6 +68,14 @@
           "features": []
         },
         {
+          "component": "drivers_peripheral_audio",
+          "features": [
+            "drivers_peripheral_audio_feature_full_test_suite = true",
+            "drivers_peripheral_audio_feature_alsa_lib = true",
+            "drivers_peripheral_audio_feature_effect = true"
+          ]
+        },
+        {
           "component": "drivers_peripheral_codec",
           "features": [
             "drivers_peripheral_codec_feature_support_omx_extend_test = true",
@@ -85,21 +90,17 @@
           ]
         },
         {
-          "component": "drivers_peripheral_audio",
+          "component": "drivers_peripheral_wlan",
           "features": [
-            "drivers_peripheral_audio_feature_alsa_lib = true"
+            "drivers_peripheral_wlan_feature_enable_HDF_NL80211 = true",
+            "drivers_peripheral_wlan_feature_enable_HDF_UT = false"
           ]
-        }
-      ]
-    },
-    {
-      "subsystem": "multimedia",
-      "components": [
+        },
         {
-          "component": "player_framework",
+          "component": "hdf_core",
           "features": [
-            "multimedia_player_framework_use_codec_plugins = true"
-         ]
+            "hdf_core_platform_test_support = true"
+          ]
         }
       ]
     },
@@ -123,6 +124,43 @@
           "features": [
             "fusion_interaction_coordination = false"
           ]
+        }
+      ]
+    },
+    {
+      "subsystem": "communication",
+      "components": [
+        {
+          "component": "wifi",
+          "features": [
+            "wifi_feature_non_seperate_p2p = true",
+            "wifi_feature_non_hdf_driver = true"
+         ]
+        }
+      ]
+    },
+    {
+      "subsystem": "multimedia",
+      "components": [
+        {
+          "component": "audio_framework",
+          "features": [
+            "audio_framework_feature_dtmf_tone = true",
+            "audio_framework_feature_opensl_es = true"
+          ]
+        }
+      ]
+    },
+    {
+      "subsystem": "castplus",
+      "components": [
+        {
+          "component": "sharing_framework",
+          "features": []
+        },
+        {
+          "component": "cast_engine",
+          "features": []
         }
       ]
     },
@@ -155,6 +193,10 @@
         },
         {
           "component": "graphic_surface",
+          "features": []
+        },
+        {
+          "component": "graphic_3d",
           "features": []
         }
       ]

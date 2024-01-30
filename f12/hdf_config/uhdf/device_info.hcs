@@ -171,7 +171,7 @@
         wlan :: host {
             hostName = "wifi_host";
             priority = 50;
-caps = ["DAC_OVERRIDE", "DAC_READ_SEARCH", "NET_ADMIN", "NET_RAW"];
+            caps = ["DAC_OVERRIDE", "DAC_READ_SEARCH", "NET_ADMIN", "NET_RAW"];
             gid = ["wifi_host", "wifi_group"];
             wifi_device :: device {
                 device0 :: deviceNode {
@@ -181,12 +181,20 @@ caps = ["DAC_OVERRIDE", "DAC_READ_SEARCH", "NET_ADMIN", "NET_RAW"];
                     serviceName = "wlan_interface_service";
                 }
             }
-wpa_supplicant_device :: device {
+            wpa_supplicant_device :: device {
                 device0 :: deviceNode {
                     policy = 2;
                     priority = 100;
                     moduleName = "libwpa_hdi_c_device.z.so";
                     serviceName = "wpa_interface_service";
+                }
+            }
+            hostapd_device :: device {
+                device0 :: deviceNode {
+                    policy = 2;
+                    priority = 100;
+                    moduleName = "libhostapd_hdi_c_device.z.so";
+                    serviceName = "hostapd_interface_service";
                 }
             }
         }
@@ -273,7 +281,7 @@ wpa_supplicant_device :: device {
                 }
             }
         }
-clearplay :: host {
+	clearplay :: host {
             hostName = "clearplay_host";
             priority = 50;
             uid = "clearplay_host";
@@ -307,7 +315,7 @@ clearplay :: host {
                     serviceName = "input_interfaces_service";
                 }
             }
-hid_ddk_device :: device {
+            hid_ddk_device :: device {
                 device0 :: deviceNode {
                     policy = 2;
                     priority = 100;

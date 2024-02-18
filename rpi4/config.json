@@ -54,8 +54,12 @@
           "component": "ace_engine",
           "features": [
             "ace_engine_feature_enable_accessibility = true",
-            "ace_engine_feature_enable_web = false"
+            "ace_engine_feature_enable_web = true"
           ]
+        },
+        {
+          "component": "ui_appearance",
+          "features": []
         }
       ]
     },
@@ -86,7 +90,8 @@
         {
           "component": "drivers_peripheral_display",
           "features": [
-            "drivers_peripheral_display_community = true"
+            "drivers_peripheral_display_community = true",
+            "drivers_peripheral_display_vdi_default = true"
           ]
         },
         {
@@ -117,8 +122,17 @@
           "features": [
             "graphic_2d_feature_ace_enable_gpu = true",
             "graphic_2d_feature_rs_enable_eglimage = true",
+            "graphic_2d_feature_use_texgine = true",
             "graphic_2d_feature_enable_mesa3d = true"
           ]
+        },
+        {
+          "component": "graphic_surface",
+          "features": []
+        },
+        {
+          "component": "graphic_3d",
+          "features": []
         }
       ]
     }

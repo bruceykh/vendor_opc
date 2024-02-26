@@ -54,16 +54,26 @@
           "component": "ace_engine",
           "features": [
             "ace_engine_feature_enable_accessibility = true",
-            "ace_engine_feature_enable_web = false"
+            "ace_engine_feature_enable_web = true"
           ]
+        },
+        {
+          "component": "ui_appearance",
+          "features": []
         }
       ]
     },
     {
-      "subsystem": "wpa_supplicant-2.9",
+      "subsystem": "thirdparty",
       "components": [
         {
-          "component": "wpa_supplicant-2.9",
+          "component": "libuv",
+          "features": [
+            "use_ffrt = true"
+          ]
+        },
+        {
+          "component": "wpa_supplicant",
           "features": [
             "wpa_supplicant_driver_nl80211 = true"
           ]
@@ -80,7 +90,8 @@
         {
           "component": "drivers_peripheral_display",
           "features": [
-            "drivers_peripheral_display_community = true"
+            "drivers_peripheral_display_community = true",
+            "drivers_peripheral_display_vdi_default = true"
           ]
         },
         {
@@ -111,8 +122,17 @@
           "features": [
             "graphic_2d_feature_ace_enable_gpu = true",
             "graphic_2d_feature_rs_enable_eglimage = true",
+            "graphic_2d_feature_use_texgine = true",
             "graphic_2d_feature_enable_mesa3d = true"
           ]
+        },
+        {
+          "component": "graphic_surface",
+          "features": []
+        },
+        {
+          "component": "graphic_3d",
+          "features": []
         }
       ]
     }

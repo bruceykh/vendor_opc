@@ -17,3 +17,4 @@ const.product.name="FILY F12"
 const.product.model="FILY F12"
 const.product.manufacturer=FILY
 #const.product.devicetype=tablet
+const.security.developermode.state=true

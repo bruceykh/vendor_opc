@@ -16,3 +16,4 @@ const.build.product=default
 const.product.name="Orangepi 5Plus"
 const.product.model="Orangepi 5Plus"
 const.product.manufacturer=Orangepi
+const.security.developermode.state=true

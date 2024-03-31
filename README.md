@@ -7,8 +7,9 @@
 香橙派5Plus  
 FILY F12  
 
+最新版本适配情况请查看组织首页状态
 #### 介绍
-该项目介绍，如何编译运行 [OpenHarmony 4.1 Beta1](https://gitee.com/openharmony/docs/blob/master/zh-cn/release-notes/OpenHarmony-v4.1-beta1.md)标准系统。  
+该项目介绍，如何编译运行 [OpenHarmony 4.1 Release](https://gitee.com/openharmony/docs/blob/master/zh-cn/release-notes/OpenHarmony-v4.1-release.md)标准系统。  
 
 # 搭建开发环境
 ## 1.1 硬件环境
@@ -79,13 +80,13 @@ git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/
 git clone https://gitee.com/ohos-porting-communities/linux_sagit.git kernel/linux/linux-sagit
 
 #下载Poco F1内核（845内核）
-git clone -b OpenHarmony-4.1-Beta1 https://gitee.com/openharmony-dg/kernel_linux_6.3.git kernel/linux/linux-6.3
+git clone -b OpenHarmony-4.1-Release https://gitee.com/openharmony-dg/kernel_linux_6.3.git kernel/linux/linux-6.3
 
 #下载香橙派5Plus内核
-git clone -b OpenHarmony-4.1-Beta1 https://gitee.com/ohos-porting-communities/linux_5.10_opi.git kernel/linux/linux-5.10-opi
+git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/linux_5.10_opi.git kernel/linux/linux-5.10-opi
 
 #下载FILY F12内核
-git clone -b OpenHarmony-4.1-Beta1 https://gitee.com/ohos-porting-communities/kernel_linux_5.10_f12.git kernel/linux/linux-5.10-f12
+git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/kernel_linux_5.10_f12.git kernel/linux/linux-5.10-f12
 
 #因官方manifest在4.0分支去掉了eudev仓，poco f1电量检测依赖eudev，因此需要手动下载eudev
 git clone -b OpenHarmony-4.0-Release https://gitee.com/openharmony/third_party_eudev.git third_party/eudev
@@ -134,10 +135,10 @@ cd $PROJ_ROOT
 ./build.sh --product-name rpi4 --ccache --no-prebuilt-sdk
 
 #香橙派5Plus
-./build.sh --product-name opi5plus --ccache --no-prebuilt-sdk
+./build.sh --product-name opi5plus --ccache --no-prebuilt-sdk --no-prebuilt-sdk
 
 #FILY F12
-./build.sh --product-name f12 --ccache --no-prebuilt-sdk
+./build.sh --product-name f12 --ccache --no-prebuilt-sdk --no-prebuilt-sdk
 
 ```
  编译成功提示:

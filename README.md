@@ -7,7 +7,8 @@
 香橙派5Plus  
 FILY F12  
 
-最新版本适配情况请查看组织首页状态
+<mark>**最新版本适配情况请查看组织首页状态**<mark>
+
 #### 介绍
 该项目介绍，如何编译运行 [OpenHarmony 4.1 Release](https://gitee.com/openharmony/docs/blob/master/zh-cn/release-notes/OpenHarmony-v4.1-release.md)标准系统。  
 
@@ -48,11 +49,11 @@ source ~/.bashrc            # 应用环境变量
 
 ```
 export WORK_SPACE=/home/xxx/OpenHarmony #替换成自己定义的workspace路径
-export PROJ_ROOT=$WORK_SPACE/4.1-Beta1
+export PROJ_ROOT=$WORK_SPACE/4.1-Release
 mkdir $WORK_SPACE
 mkdir $PROJ_ROOT
 cd $PROJ_ROOT
-repo init -u https://gitee.com/openharmony/manifest -b OpenHarmony-4.1-Beta1 --no-repo-verify
+repo init -u https://gitee.com/openharmony/manifest.git -b OpenHarmony-4.1-Release --no-repo-verify
 repo sync -c
 repo forall -c 'git lfs pull'
 ```
@@ -76,41 +77,21 @@ git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/
 git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/device_board_opc.git device/board/opc
 git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/device_soc_opc.git device/soc/opc
 
-#下载米6内核（835内核）
-git clone https://gitee.com/ohos-porting-communities/linux_sagit.git kernel/linux/linux-sagit
-
-#下载Poco F1内核（845内核）
-git clone -b OpenHarmony-4.1-Release https://gitee.com/openharmony-dg/kernel_linux_6.3.git kernel/linux/linux-6.3
-
 #下载香橙派5Plus内核
 git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/linux_5.10_opi.git kernel/linux/linux-5.10-opi
 
 #下载FILY F12内核
 git clone -b OpenHarmony-4.1-Release https://gitee.com/ohos-porting-communities/kernel_linux_5.10_f12.git kernel/linux/linux-5.10-f12
 
-#因官方manifest在4.0分支去掉了eudev仓，poco f1电量检测依赖eudev，因此需要手动下载eudev
-git clone -b OpenHarmony-4.0-Release https://gitee.com/openharmony/third_party_eudev.git third_party/eudev
-
 ```
-根据编译的机型，选择合并补丁或适当修改源码：
+### 根据编译的机型，选择合并补丁或适当修改源码：
 ```
 补丁和说明放置在device/board/opc/common/patches目录下
 
+OpenHarmony4.1Release编译64位版本系统有众多编译错误，
+oh4.1_fix.diff补丁为必要修复
+
 代码修改说明：
-
-#poco f1有两种机型，默认适配的是ebbg面板机型，tianma面板机型需要手动修改以下两个脚本文件
-device/board/opc/beryllium/kernel/make_kernel.mk
-device/board/opc/beryllium/kernel/make_bootimg.sh
-
-#面板类型判断参考pmos的wiki
-https://wiki.postmarketos.org/wiki/Xiaomi_POCO_F1_(xiaomi-beryllium)
-
-
-#树莓派4B默认挂载配置为U盘启动方式，此为我为了方便调试进行的改动，
-树莓派4B默认启动启动方式为从microSD卡启动，需要修改以下文件，切换挂载分区
-
-device/board/opc/rpi4/cfg/fstab.required
-device/board/opc/rpi4/cfg/fstab.rpi4
 
 #香橙派5Plus因为我使用的显示器为4k分辨率，dpi参数较高，
 编译前需要修改以下文件，修改dpi参数
@@ -125,39 +106,30 @@ vendor/opc/opi5plus/custom_conf/window/display_manager_config.xml
 ```
 cd $PROJ_ROOT  
 
-#小米POCO F1
-./build.sh --product-name beryllium --ccache --no-prebuilt-sdk
-
-#小米6
-./build.sh --product-name sagit --ccache --no-prebuilt-sdk
-
-#树莓派4B
-./build.sh --product-name rpi4 --ccache --no-prebuilt-sdk
-
 #香橙派5Plus
-./build.sh --product-name opi5plus --ccache --no-prebuilt-sdk --no-prebuilt-sdk
+./build.sh --product-name opi5plus --ccache --no-prebuilt-sdk
 
 #FILY F12
-./build.sh --product-name f12 --ccache --no-prebuilt-sdk --no-prebuilt-sdk
+./build.sh --product-name f12 --ccache --no-prebuilt-sdk
 
 ```
  编译成功提示:
 ```
 post_process
-=====build beryllium successful.
+=====build opi5plus successful.
 ```
 
 编译生成的文件
 ```
-$PROJ_ROOT/out/beryllium/packages/phone/images/system.img 
-$PROJ_ROOT/out/beryllium/packages/phone/images/vendor.img
-$PROJ_ROOT/out/beryllium/packages/phone/images/userdata.img
-$PROJ_ROOT/out/beryllium/packages/phone/images/ramdisk.img
+$PROJ_ROOT/out/opi5plus/packages/phone/images/system.img 
+$PROJ_ROOT/out/opi5plus/packages/phone/images/vendor.img
+$PROJ_ROOT/out/opi5plus/packages/phone/images/userdata.img
+$PROJ_ROOT/out/opi5plus/packages/phone/images/ramdisk.img
 ```
 
 
-## 3.2 额外镜像编译
-编译好OpenHarmony的文件之后使用以下命令内核并打包手机boot.img/树莓派4B完整镜像
+~~## 3.2 额外镜像编译
+编译好OpenHarmony的文件之后使用以下命令内核并打包手机boot.img/树莓派4B完整镜像~~
 ```
 #小米POCO F1
 cd device/board/opc/beryllium/kernel

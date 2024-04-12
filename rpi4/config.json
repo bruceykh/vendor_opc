@@ -30,11 +30,8 @@
           "features": []
         },
         {
-          "component": "wifi",
-          "features": [
-            "wifi_feature_non_seperate_p2p = true",
-            "wifi_feature_non_hdf_driver = true"
-         ]
+          "component": "bluetooth_service",
+          "features": []
         }
       ]
     },
@@ -64,28 +61,26 @@
       ]
     },
     {
-      "subsystem": "thirdparty",
-      "components": [
-        {
-          "component": "libuv",
-          "features": [
-            "use_ffrt = true"
-          ]
-        },
-        {
-          "component": "wpa_supplicant",
-          "features": [
-            "wpa_supplicant_driver_nl80211 = true"
-          ]
-        }
-      ]
-    },
-    {
       "subsystem": "hdf",
       "components": [
         {
           "component": "drivers_interface_audio",
           "features": []
+        },
+        {
+          "component": "drivers_peripheral_audio",
+          "features": [
+            "drivers_peripheral_audio_feature_full_test_suite = true",
+            "drivers_peripheral_audio_feature_alsa_lib = true",
+            "drivers_peripheral_audio_feature_effect = true"
+          ]
+        },
+        {
+          "component": "drivers_peripheral_codec",
+          "features": [
+            "drivers_peripheral_codec_feature_support_omx_extend_test = true",
+            "drivers_peripheral_codec_feature_support_hdi_v1 = true"
+          ]
         },
         {
           "component": "drivers_peripheral_display",
@@ -95,9 +90,16 @@
           ]
         },
         {
-          "component": "drivers_peripheral_audio",
+          "component": "drivers_peripheral_wlan",
           "features": [
-            "drivers_peripheral_audio_feature_alsa_lib = false"
+            "drivers_peripheral_wlan_feature_enable_HDF_NL80211 = true",
+            "drivers_peripheral_wlan_feature_enable_HDF_UT = false"
+          ]
+        },
+        {
+          "component": "hdf_core",
+          "features": [
+            "hdf_core_platform_test_support = true"
           ]
         }
       ]
@@ -115,6 +117,72 @@
       ]
     },
     {
+      "subsystem": "msdp",
+      "components": [
+        {
+          "component": "device_status",
+          "features": [
+            "fusion_interaction_coordination = false"
+          ]
+        }
+      ]
+    },
+    {
+      "subsystem": "communication",
+      "components": [
+        {
+          "component": "wifi",
+          "features": [
+            "wifi_feature_non_seperate_p2p = true",
+            "wifi_feature_non_hdf_driver = true",
+            "wifi_feature_p2p_random_mac_addr = false"
+         ]
+        }
+      ]
+    },
+    {
+      "subsystem": "multimedia",
+      "components": [
+        {
+          "component": "audio_framework",
+          "features": [
+            "audio_framework_feature_dtmf_tone = true",
+            "audio_framework_feature_opensl_es = true"
+          ]
+        }
+      ]
+    },
+    {
+      "subsystem": "castplus",
+      "components": [
+        {
+          "component": "sharing_framework",
+          "features": []
+        },
+        {
+          "component": "cast_engine",
+          "features": []
+        }
+      ]
+    },
+    {
+      "subsystem": "thirdparty",
+      "components": [
+        {
+          "component": "libuv",
+          "features": [
+            "use_ffrt = true"
+          ]
+        },
+        {
+          "component": "wpa_supplicant",
+          "features": [
+            "wpa_supplicant_driver_nl80211 = true"
+          ]
+        }
+      ]
+    },
+    {
       "subsystem": "graphic",
       "components": [
         {
@@ -122,8 +190,7 @@
           "features": [
             "graphic_2d_feature_ace_enable_gpu = true",
             "graphic_2d_feature_rs_enable_eglimage = true",
-            "graphic_2d_feature_use_texgine = true",
-            "graphic_2d_feature_enable_mesa3d = true"
+            "graphic_2d_feature_use_texgine = true"
           ]
         },
         {
@@ -132,6 +199,14 @@
         },
         {
           "component": "graphic_3d",
+          "features": []
+        },
+        {
+          "component": "vulkan-loader",
+          "features": []
+        },
+        {
+          "component": "vulkan-headers",
           "features": []
         }
       ]

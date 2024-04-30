@@ -171,6 +171,7 @@
         wlan :: host {
             hostName = "wifi_host";
             priority = 50;
+            caps = ["DAC_OVERRIDE", "DAC_READ_SEARCH", "NET_ADMIN", "NET_RAW"];
             gid = ["wifi_host", "wifi_group"];
             wifi_device :: device {
                 device0 :: deviceNode {
@@ -178,6 +179,22 @@
                     priority = 100;
                     moduleName = "libwifi_hdi_c_device.z.so";
                     serviceName = "wlan_interface_service";
+                }
+            }
+            wpa_supplicant_device :: device {
+                device0 :: deviceNode {
+                    policy = 2;
+                    priority = 100;
+                    moduleName = "libwpa_hdi_c_device.z.so";
+                    serviceName = "wpa_interface_service";
+                }
+            }
+            hostapd_device :: device {
+                device0 :: deviceNode {
+                    policy = 2;
+                    priority = 100;
+                    moduleName = "libhostapd_hdi_c_device.z.so";
+                    serviceName = "hostapd_interface_service";
                 }
             }
         }
@@ -264,10 +281,24 @@
                 }
             }
         }
+	clearplay :: host {
+            hostName = "clearplay_host";
+            priority = 50;
+            uid = "clearplay_host";
+            gid = ["clearplay_host"];
+            clearplay_device :: device {
+                 device0 :: deviceNode {
+                     policy = 2;
+                     priority = 100;
+                     moduleName = "libclearplay_driver.z.so";
+                     serviceName = "clearplay_service";
+                 }
+            }
+        }
         input_hal :: host {
             hostName = "input_user_host";
             priority = 50;
-            gid = ["input_user_host", "uhdf_driver"];
+            gid = ["input_user_host", "uhdf_driver", "uhid"];
             input_device :: device {
                 device0 :: deviceNode {
                     policy = 2;
@@ -282,6 +313,14 @@
                     priority = 100;
                     moduleName = "libinput_driver.z.so";
                     serviceName = "input_interfaces_service";
+                }
+            }
+            hid_ddk_device :: device {
+                device0 :: deviceNode {
+                    policy = 2;
+                    priority = 100;
+                    moduleName = "libhid_ddk_driver.z.so";
+                    serviceName = "hid_ddk_service";
                 }
             }
         }
@@ -387,8 +426,8 @@
                 device0 :: deviceNode {
                     policy = 2;
                     priority = 100;
-                    moduleName = "libcodec_jpeg_driver.z.so";
-                    serviceName = "codec_image_jpeg_service";
+                    moduleName = "libcodec_image_driver.z.so";
+                    serviceName = "codec_image_service";
                     deviceMatchAttr = "image_codec_capabilities";
                 }
             }
